@@ -1,0 +1,22 @@
+{
+	"cites": [
+		{
+			"id": 0,
+			"text": "<i>Buďme</i> upřímný, kdyby byl <i>Becháč</i> bohatej, tak bych po něm šla.<br/><br/>-Barbora Chládková 2021<br/>",
+			"type": "zak",
+			"voting": [{ "name": "start", "vote": 5 }]
+		},
+		{
+			"id": 1,
+			"text": "Šimon Prášek <i>nám</i> dal párek<br/><br/>-Bára Chládková 2021<br/>",
+			"type": "zak",
+			"voting": [{ "name": "start", "vote": 5 }]
+		},
+		{
+			"id": 2,
+			"text": "<strong>Cinková</strong>: Tak jak <i>je</i> porodit?<br/><br/>Jako mě <i>napadlo</i> jako: lay an egg<br/><br/>-Barbora Chládková 2022",
+			"type": "zak",
+			"voting": [{ "name": "start", "vote": 5 }]
+		}
+	]
+}
