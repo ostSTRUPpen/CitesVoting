@@ -1,15 +1,25 @@
 <script lang="ts">
+	import { UserID } from '../../../../Data/Store';
+	import { voteOnCite, getCiteValueByIdAndUserId } from './citeFunctions';
+
 	const max: number = 10;
 	const min: number = max - max;
-	const mid: number = max / 2;
 	const multiplier: number = 255 / 10;
 
-	let rangeValue: number = mid;
+	let rangeValue: number;
+	let canVote = false;
 	let color: string = '#808000';
 
-	export let citeId: number;
+	export let citeId: string;
+	let currentUserId: string = '';
+	UserID.subscribe((value) => {
+		currentUserId = value;
+	});
 
-	console.log(citeId);
+	getCiteValueByIdAndUserId(citeId, currentUserId).then((o) => {
+		rangeValue = o;
+		canVote = true;
+	});
 
 	function calculateColor(val: number) {
 		const red: number = Math.round(255 - multiplier * val);
@@ -23,6 +33,11 @@
 
 	$: {
 		color = calculateColor(rangeValue);
+	}
+
+	$: {
+		if (typeof rangeValue === 'number' && canVote === true && rangeValue !== 5)
+			voteOnCite(citeId, currentUserId, rangeValue).then(() => console.log('voted'));
 	}
 </script>
 

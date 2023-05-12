@@ -5,16 +5,18 @@ const citeSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},
-	type: {
+	citeType: {
 		type: String,
 		required: true
 	},
 	votes: {
-		type: Map,
-		of: Number,
-		default: {
-			begin: 5
-		}
+		type: Array,
+		default: [
+			{
+				userId: 'start',
+				value: 5
+			}
+		]
 	}
 });
 

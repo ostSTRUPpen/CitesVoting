@@ -2,11 +2,10 @@
 	import Voting from './Voting.svelte';
 	export let cite: any;
 
-	let text = cite[1]['text'];
-
+	let text: string = cite[1]['text'];
 	let citeType: string;
 
-	switch (cite[1]['type']) {
+	switch (cite[1]['citeType']) {
 		case 'ucitel': {
 			citeType = 'učitel';
 			break;
@@ -31,7 +30,7 @@
 		{@html text}
 	</p>
 	<p>Druh citátu: {citeType}</p>
-	<Voting citeId={cite[1]['id']} />
+	<Voting citeId={cite[1]['_id']} />
 	<hr />
 </li>
 
