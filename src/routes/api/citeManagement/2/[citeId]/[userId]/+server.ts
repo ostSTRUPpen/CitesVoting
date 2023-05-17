@@ -1,9 +1,11 @@
 import { json } from '@sveltejs/kit';
 import { Cite } from '../../../../../../db/models/Cite';
+import type { RequestEvent } from './$types';
 
-export async function GET(requestEvent) {
+export async function GET(requestEvent: RequestEvent) {
 	const { params } = requestEvent;
 	const { citeId, userId } = params;
+	// Tady by to šlo přepsat, aby se využívalo locals.id, takže by nebylo volně vidět ID uživatele
 	try {
 		const cite = await Cite.findById(citeId).exec();
 		if (!cite) throw new Error('Citát nenalezen!');

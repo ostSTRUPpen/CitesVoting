@@ -1,7 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { User } from '../../../../db/models/User';
+import type { RequestEvent } from '../$types';
 
-export async function GET(requestEvent): Promise<Response> {
+export async function GET(requestEvent: RequestEvent): Promise<Response> {
 	const { params } = requestEvent;
 	const { userId } = params;
 	try {

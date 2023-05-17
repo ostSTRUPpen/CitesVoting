@@ -11,8 +11,6 @@
 
 	//const x = addUser('luAu', 'xyz', 'user');
 
-	//console.log(cites);
-
 	/**
 	 * Export rangeValue... v nějakém usefull formátu a podobě...
 	 * Načtení dat z textu DONE
@@ -37,7 +35,7 @@
 </script>
 
 <div>
-	<a href="users/add">Přidat uživatele</a>
+	<a href="users/add">Přidat uživatele</a> <br />
 	{#await promise}
 		<p>načítání</p>
 	{:then users}

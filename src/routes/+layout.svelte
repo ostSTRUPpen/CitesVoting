@@ -1,3 +1,6 @@
-<header>Header_all</header>
+<script lang="ts">
+</script>
+
+<header>Hlasování citátů</header>
 <slot />
-<footer>Footer_all</footer>
+<footer>Vytvořil TODO</footer>

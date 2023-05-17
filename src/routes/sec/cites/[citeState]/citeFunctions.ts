@@ -1,5 +1,5 @@
 export async function getCites(): Promise<object> {
-	const response = await fetch('../../../../api/citeManagment');
+	const response = await fetch('../../../../api/citeManagement');
 	const cites = await response.json();
 	return cites;
 }
@@ -8,13 +8,13 @@ export async function getCitesByCiteTypeAndUserId(
 	citeType: string,
 	userId: string
 ): Promise<number> {
-	const response = await fetch(`../../../../api/citeManagment/1/${citeType}/${userId}`);
+	const response = await fetch(`../../../../api/citeManagement/1/${citeType}/${userId}`);
 	const cite = await response.json();
 	return cite;
 }
 
 export async function getCiteValueByIdAndUserId(citeId: string, userId: string): Promise<number> {
-	const response = await fetch(`../../../../api/citeManagment/2/${citeId}/${userId}`);
+	const response = await fetch(`../../../../api/citeManagement/2/${citeId}/${userId}`);
 	const number = await response.json();
 	let returnNum = number['val'];
 	if (returnNum < 0 || returnNum > 10 || typeof returnNum !== 'number') {
@@ -24,7 +24,7 @@ export async function getCiteValueByIdAndUserId(citeId: string, userId: string):
 }
 
 export async function voteOnCite(citeId: string, userId: string, value: number): Promise<object> {
-	const response = await fetch('../../../../api/citeManagment', {
+	const response = await fetch('../../../../api/citeManagement', {
 		method: 'PATCH',
 		body: JSON.stringify({ citeId, userId, value }),
 		headers: {

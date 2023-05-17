@@ -5,8 +5,6 @@
 
 	export let user: any;
 
-	console.log(user);
-
 	const USERNAME_REGEX = /[^a-zA-Z0-9]/;
 	const PASSWORD_REGEX = /[a-zA-Z0-9\$-@]/;
 
@@ -25,7 +23,6 @@
 		} else {
 			validUsername = true;
 		}
-		console.log(validUsername);
 	}
 	$: usernameError = validUsername ? '' : 'error_input';
 
@@ -37,19 +34,14 @@
 		if (password.length === 0) {
 			validPassword = true;
 		} else if (password.length < 5) {
-			console.log('1');
 			validPassword = false;
 		} else if (password.length > 10) {
-			console.log('2');
 			validPassword = false;
 		} else if (!PASSWORD_REGEX.test(password)) {
-			console.log('3');
 			validPassword = false;
 		} else {
-			console.log('4');
 			validPassword = true;
 		}
-		console.log(validPassword);
 	}
 	$: passwordError = validPassword ? '' : 'error_input';
 
@@ -59,12 +51,9 @@
 	];
 	let role: any = choices.find((choice) => choice['text'] === user['role']);
 
-	$: console.log(role);
-
 	let canSubmit: boolean = false;
 
 	$: {
-		console.log('A' + [validUsername, validPassword].every(Boolean));
 		canSubmit = [validUsername, validPassword].every(Boolean);
 	}
 
@@ -75,7 +64,6 @@
 		let submitUsername = username,
 			submitPassword = password,
 			submitRole = role['text'];
-		console.log(user['id']);
 		const response: any = await updateUser(user['_id'], submitUsername, submitPassword, submitRole);
 		if (response['success'] === true) {
 			submitUsername = password = '';

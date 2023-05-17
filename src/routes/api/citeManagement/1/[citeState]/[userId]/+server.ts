@@ -4,6 +4,7 @@ import { Cite } from '../../../../../../db/models/Cite';
 export async function GET(requestEvent) {
 	const { params } = requestEvent;
 	const { citeState, userId } = params;
+	// Tady by to šlo přepsat, aby se využívalo locals.id, takže by nebylo volně vidět ID uživatele
 	try {
 		let cites;
 		if (citeState === 'not_voted') {
@@ -15,7 +16,6 @@ export async function GET(requestEvent) {
 		}
 		if (cites.length === 0) {
 			cites = await Cite.find().exec();
-			console.log('no cites');
 		}
 		return json(cites);
 	} catch (error: any) {

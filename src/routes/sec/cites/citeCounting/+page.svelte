@@ -1,9 +1,11 @@
 <script lang="ts">
-	import CiteListItem from './CiteListItem.svelte';
-	import { getCitesByCiteTypeAndUserId } from './citeFunctions';
-	import { page } from '$app/stores';
-	import { UserID } from '../../../../Data/Store';
+	import CiteCountListItem from './CiteCountListItem.svelte';
+	import { getCountedCites } from './citeCountingFunctions';
 
+	let promise: any = getCountedCites().then();
+
+	const printing = false;
+	/*
 	let currentUserId: string = '';
 	UserID.subscribe((value) => {
 		currentUserId = value;
@@ -12,6 +14,8 @@
 	const citeState = $page.params.citeState;
 
 	let promise: any = getCitesByCiteTypeAndUserId(citeState, currentUserId).then();
+
+
 
 	/**
 	 * Export rangeValue... v nějakém usefull formátu a podobě...
@@ -30,20 +34,23 @@
 	 */
 </script>
 
-<ul>
+<a href="/sec/cites/citeCounting/print">Tisk</a> <br />
+<div class="citeCount">
 	{#await promise}
 		<p>načítání</p>
-	{:then cites}
-		{#if !cites['message']}
-			{#each Object.entries(cites) as cite}
-				<CiteListItem {cite} />
-			{/each}
+	{:then countedCites}
+		{#if !countedCites['message']}
+			<ul>
+				{#each Object.entries(countedCites) as cite}
+					<CiteCountListItem {printing} {cite} />
+				{/each}
+			</ul>
 		{:else}
 			<p>
-				{cites['message']}
+				{countedCites['message']}
 			</p>
 		{/if}
 	{:catch error}
 		<p class="error">{error.message}</p>
 	{/await}
-</ul>
+</div>

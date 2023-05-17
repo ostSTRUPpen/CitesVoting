@@ -1,6 +1,7 @@
 import { json } from '@sveltejs/kit';
 import { User } from '../../../db/models/User';
 import bcrypt from 'bcrypt';
+import type { RequestEvent } from './$types.js';
 
 export async function GET(): Promise<Response> {
 	try {
@@ -15,7 +16,7 @@ export async function GET(): Promise<Response> {
 	}
 }
 
-export async function POST(requestEvent): Promise<Response> {
+export async function POST(requestEvent: RequestEvent): Promise<Response> {
 	const { request } = requestEvent;
 	const { username, password, role } = await request.json();
 	const newUserObject = {

@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/stores';
+
 	// https://www.youtube.com/playlist?list=PLC3y8-rFHvwjifDNQYYWI6i06D7PjF0Ua
 	/** Routes and navigation
 	 * https://www.youtube.com/watch?v=2ZvSj5kktjA&list=PLC3y8-rFHvwjifDNQYYWI6i06D7PjF0Ua&index=6&pp=iAQB
@@ -20,5 +22,4 @@
 	 */
 </script>
 
-<a href="/sec/cites">cites</a>
-<a href="/sec/users">users</a>
+<a href="/login">Přihlásit se</a> <br />

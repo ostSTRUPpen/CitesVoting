@@ -23,26 +23,26 @@
   - [x] Formátování
   - [x] Komunikace s databází
   - [x] Úspěšné nahrání
-- [ ] Vyhodnocení jednotlivých citátů
-- [ ] Možnost je nějak jednodušše vytisknout (např plain text/formátované pdf/ atd...)
-- [ ] Přihlášení uživatele do systému
-  - [ ] Login a landing page
-  - [ ] Kontrola údajů
+- [x] Vyhodnocení jednotlivých citátů
+- [x] Možnost je nějak jednodušše vytisknout (např plain text/formátované pdf/ atd...)
+- [x] Přihlášení uživatele do systému
+  - [x] Login a landing page
+  - [x] Kontrola údajů
   - [ ] Uložení zařízení
-  - [ ] Zápis podstatných informací do store
-  - [ ] Ověřit funkčnost ukládání citátů ke správnému uživateli
+  - [x] Zápis podstatných informací do store
+  - [x] Ověřit funkčnost ukládání citátů ke správnému uživateli
 - [ ] Vylepšení grafického rozhraní
   - [ ] SCSS
-  - [ ] Header, zobrazuje jméno uživatele a roli a navigační tlačítka (domů, hlasované, nové, odhlásit)
+  - [x] Header, zobrazuje jméno uživatele a roli a navigační tlačítka (domů, hlasované, nové, odhlásit)
   - [ ] Footer, zobrazuje copyright
-- [ ] Zabezpečení jednotlivých URL adres podle pravomocí uživatele
+- [x] Zabezpečení jednotlivých URL adres podle pravomocí uživatele
 - [ ] Testování
   - [ ] Pomocí Vite test
   - [ ] Pomocí playwright
   - [ ] Ručně
 - [ ] Final touches
   - [ ] Logování požadavků a errorů (tak aby se k nim dalo dostat xd)
-  - [ ] Porjít všechny "any" TS typy a udělat vlastní, aby bylo vše type safe (i u errorů)
+  - [ ] Projít všechny "any" TS typy a udělat vlastní, aby bylo vše type safe (i u errorů)
   - [ ] Readme
     - [ ] do .bat je potřeba napsat username a password a vložit správné URL
     - [ ] do .env v src složce je třeba vložit URI na databízi
@@ -51,7 +51,7 @@
       - [ ] též je nutný input.txt soubor, který hledá formater při formátování
       - [ ] Styl citátů v input.txt \*\*a\*\* => **a**, \*a\* => _a_, odděleno ";"
       - [ ] nejdříve formater, poté x.bat
-  - [ ] Přidat i python a .bat kód, tak aby to neexposnulo přihlašovací údaje a URL adresu
+  - [x] Přidat i python a .bat kód, tak aby to neexposnulo přihlašovací údaje a URL adresu
 - [ ] nahrání na hosting
 - [ ] Ruční testování
   - [ ] Funguje blokace adres
@@ -59,3 +59,5 @@
   - [ ] Stránka se neposere kvůli cestování tam/zpět/reloadu
 - [ ] Ukázkové a seznamovací video pro spolužáky
 - [ ] Vymyslet jaké tam dát citáty
+
+!!! Nutno upravit, aby pokud nejsou žádné obodované/neobodvané citáty, tak aby to něco napsalo a nevypsalo jen úplně všechny for fun

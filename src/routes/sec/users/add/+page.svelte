@@ -21,7 +21,6 @@
 		} else {
 			validUsername = true;
 		}
-		console.log(validUsername);
 	}
 	$: usernameError = validUsername ? '' : 'error_input';
 
@@ -39,7 +38,6 @@
 		} else {
 			validPassword = true;
 		}
-		console.log(validPassword);
 	}
 	$: passwordError = validPassword ? '' : 'error_input';
 
@@ -49,12 +47,9 @@
 	];
 	let role: any;
 
-	$: console.log(role);
-
 	let canSubmit: boolean = false;
 
 	$: {
-		console.log('A' + [validUsername, validPassword].every(Boolean));
 		canSubmit = [validUsername, validPassword].every(Boolean);
 	}
 

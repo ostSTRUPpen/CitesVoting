@@ -1,16 +1,11 @@
 import { json } from '@sveltejs/kit';
 import { Cite } from '../../../db/models/Cite';
 
-/*export function GET() {
-	const onlyCites = cites['cites'];
-	return json(onlyCites);
-}*/
-
 export async function GET() {
 	try {
 		const cites = await Cite.find().lean();
 		if (!cites) {
-			throw new Error('No job found');
+			throw new Error('No cites found');
 		}
 		return json(cites);
 	} catch (error: any) {

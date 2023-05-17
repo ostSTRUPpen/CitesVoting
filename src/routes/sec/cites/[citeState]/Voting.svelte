@@ -37,7 +37,7 @@
 
 	$: {
 		if (typeof rangeValue === 'number' && canVote === true && rangeValue !== 5)
-			voteOnCite(citeId, currentUserId, rangeValue).then(() => console.log('voted'));
+			voteOnCite(citeId, currentUserId, rangeValue).then();
 	}
 </script>
 

@@ -20,12 +20,10 @@
 
 	function confirmDeleting() {
 		displayDialog('Přejete si smazat uživatele?', 'asking');
-		console.log('here');
 	}
 
 	async function deleteUser() {
 		dialog.close();
-		console.log('here2');
 		const response: any = await deleteUserById(id);
 		if (response['success'] === true) {
 			displayDialog('Uživatel smazán!', 'deleted');
@@ -35,9 +33,7 @@
 		}
 	}
 	function displayDialog(text: string, asking: string = 'asking') {
-		console.log(text);
 		dialogText = text;
-		console.log(dialogText);
 		dialogType = asking;
 		dialog['showModal']();
 	}
